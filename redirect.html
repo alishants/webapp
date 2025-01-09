@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect</title>
+    <script>
+        // Получаем параметр ссылки из URL
+        const params = new URLSearchParams(window.location.search);
+        const target = params.get("url");
+
+        // Проверяем, указана ли ссылка, и перенаправляем
+        if (target) {
+            window.location.href = target;
+        } else {
+            document.body.innerText = "Invalid URL!";
+        }
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>

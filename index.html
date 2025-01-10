@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web App Redirect</title>
+  <script>
+    window.onload = function() {
+      // Получаем параметр 'site' из URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const siteUrl = urlParams.get('site'); // Получаем значение параметра 'site'
+
+      if (siteUrl) {
+        // Если параметр 'site' существует, перенаправляем на этот URL
+        window.location.href = siteUrl;
+      } else {
+        // Если параметра нет, показываем сообщение об ошибке
+        document.body.innerHTML = '<h1>No site URL provided!</h1>';
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Loading...</h1>
+</body>
+</html>

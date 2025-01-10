@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telegram Web App</title>
-</head>
 <body>
   <script>
     // Получаем параметр 'url' из query строки
@@ -18,14 +13,6 @@
           url: targetUrl  // Используем полученную ссылку
         }
       };
-
-      // Показываем в консоли объект для отладки (опционально)
-      console.log(webApp);
-      
-      // Делаем редирект на нужную ссылку
-      window.location.href = targetUrl;
-    } else {
-      document.body.innerHTML = '<h1>No URL provided</h1>';
     }
   </script>
 </body>

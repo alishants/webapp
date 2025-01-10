@@ -3,36 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web App Redirect</title>
-  <!-- Добавление Telegram Web App SDK -->
-  <script async src="https://telegram.org/js/telegram-web-app.js"></script>
+  <title>My Web App</title>
 </head>
 <body>
-  <h1>Loading...</h1>
+  <h1>Welcome to My Web App</h1>
+  <p>This is a simple web app running on GitHub Pages.</p>
   
   <script>
-    window.onload = function() {
-      const tg = window.Telegram.WebApp; // Инициализация Telegram API
-
-      // Получаем параметр 'site' из URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const siteUrl = urlParams.get('site'); // Получаем значение параметра 'site'
-
-      if (siteUrl) {
-        // Если параметр 'site' существует, перенаправляем на этот сайт
-        window.location.href = siteUrl;
-      } else {
-        // Если параметра нет, показываем сообщение об ошибке
-        document.body.innerHTML = '<h1>No site URL provided!</h1>';
-      }
-
-      // Настройка интерфейса Web App
-      tg.MainButton.text = "Close App"; // Текст кнопки
-      tg.MainButton.show(); // Показываем кнопку
-      tg.MainButton.onClick(function() {
-        tg.close(); // Закрытие приложения по нажатию на кнопку
-      });
-    };
+    // Считывание параметров из URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const subscriptionOfferId = urlParams.get('subscriptionOfferId');
+    
+    if (subscriptionOfferId) {
+      document.body.innerHTML += `<p>Offer ID: ${subscriptionOfferId}</p>`;
+    }
   </script>
 </body>
 </html>

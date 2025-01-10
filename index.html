@@ -7,12 +7,15 @@
     const targetUrl = urlParams.get('url');
 
     if (targetUrl) {
-      // Формируем объект для использования в Telegram Web App
+      // Формируем объект с ссылкой для Telegram Web App
       const webApp = {
         web_app: {
           url: targetUrl  // Используем полученную ссылку
         }
       };
+
+      // Просто выводим этот объект в консоль для проверки
+      console.log(webApp);
     }
   </script>
 </body>

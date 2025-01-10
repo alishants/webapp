@@ -3,6 +3,7 @@
 <body>
   <script>
     // Получаем параметр 'url' из query строки
+    const urlParams = new URLSearchParams(window.location.search);
     const targetUrl = urlParams.get('url');
 
     if (targetUrl) {

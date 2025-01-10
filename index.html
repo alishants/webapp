@@ -3,19 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web App</title>
+  <title>Telegram Web App</title>
 </head>
 <body>
-  <h1>Welcome to My Web App</h1>
-  <p>This is a simple web app running on GitHub Pages.</p>
-  
   <script>
-    // Считывание параметров из URL
+    // Получаем параметр 'url' из query строки
     const urlParams = new URLSearchParams(window.location.search);
-    const subscriptionOfferId = urlParams.get('subscriptionOfferId');
-    
-    if (subscriptionOfferId) {
-      document.body.innerHTML += `<p>Offer ID: ${subscriptionOfferId}</p>`;
+    const targetUrl = urlParams.get('url');
+
+    if (targetUrl) {
+      // Формируем объект для использования в Telegram Web App
+      const webApp = {
+        web_app: {
+          url: targetUrl  // Используем полученную ссылку
+        }
+      };
+
+      // Показываем в консоли объект для отладки (опционально)
+      console.log(webApp);
+      
+      // Делаем редирект на нужную ссылку
+      window.location.href = targetUrl;
+    } else {
+      document.body.innerHTML = '<h1>No URL provided</h1>';
     }
   </script>
 </body>

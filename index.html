@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>top browser</title>
   <script>
-    // Получаем параметр 'url' из query строки
-    const urlParams = new URLSearchParams(window.location.search);
-    const targetUrl = urlParams.get('url');
+    // Задаем константную ссылку
+    const targetUrl = 'https://app.lava.top/topone?subscriptionOfferId=b44dd6b0-dddc-4e1b-8ae6-b4601577e822';
 
-    if (targetUrl) {
-      // Формируем объект с ссылкой для Telegram Web App
-      const webApp = {
-        web_app: {
-          url: targetUrl  // Используем полученную ссылку
-        }
-      };
-
-      // Просто выводим этот объект в консоль для проверки
-      console.log(webApp);
-    }
+    // Открываем ссылку в новом окне
+    window.open(targetUrl, '_blank');
   </script>
+</head>
+<body>
+  <h1>Opening the link...</h1>
 </body>
 </html>
